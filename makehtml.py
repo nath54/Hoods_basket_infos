@@ -2,10 +2,9 @@
 import io
 
 
-def make_page(infs):
-    for x in range(len(infs)):
-        ii=infs[x] #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date
-        txt="""
+def make_page(inf):
+    ii=inf #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date
+    txt="""
 <html>
     <head>
         <meta charset="utf-8">
@@ -46,8 +45,7 @@ def make_page(infs):
     </body>
 </html>
 """
-        f=open(ii[0]+".html","w")
-        f.write(txt)
-        f.close()
+    f=open(ii[0]+".html","w")
+    f.write(txt)
+    f.close()
 
-make_page([["u17","Bar le Duc","Chez Nous","18:00","29/11/2019"],["u13","Villers","À l'exterieur","17:00","2/12/2019","u9","Sluc Nancy Basket","Chez nous","15:00","12/12/2019"]])

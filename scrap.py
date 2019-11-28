@@ -5,6 +5,8 @@ import time
 import io
 from bs4 import BeautifulSoup
 from datetime import date
+from datetime import datetime
+import makehtml
 
 today = date.today()
 d1 = today.strftime("%d/%m/%Y")
@@ -20,6 +22,7 @@ ps=[1,1,1]
 cat=0
 
 def scrapage():
+    
     url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cat])[2:])+str(hex(ds[cat])[2:])+str(hex(ps[cat])[2:])+".html"
     #print(url)
     response = requests.get(url)
@@ -55,6 +58,7 @@ def scrapage():
         pcfd=txt.find("<",pcod,jjj)
         pcoh=txt.find(">",jjj,ihoud)
         pcfh=txt.find("<",pcoh,ihoud)
+        lieu="A l'exterieur"
     elif nbtd==4:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
@@ -63,6 +67,14 @@ def scrapage():
         pcfd=txt.find("<",pcod,jj)
         pcoh=txt.find(">",jj,ihoud)
         pcfh=txt.find("<",pcoh,ihoud)
+        g=txt.find("<td",ihoud)
+        gg=txt.find("</td",g+1)
+        ggg=txt.find(">",g+1,gg-1)
+        print(g,ggg,gg)
+        print(txt[ggg:gg])
+        adv=txt[ggg:gg]
+        lieu="Chez nous"
+        exit()
     else:
         return "error"
 
@@ -72,23 +84,20 @@ def scrapage():
     #print("date : "+date)
     #print("heure : "+heure)
     
-    tm=int(d1.split("/")[1])
-    bm=int(date.split("/")[1])
     
-    while tm>bm:
+    ts = datetime.strptime(d1, '%d/%m/%y')
+    bs = datetime.strptime(date, '%d/%m/%y')
+    print(ts)
+    print(bs)
+    """if ts>bs:
         ps[cat]+=1
         return "datetoup"
-    
-    tj=int(d1.split("/")[0])
-    bj=int(date.split("/")[0])
-    
-    while tj>bj:
-        ps[cat]+=1
-        return "datetoup"
+    """
     
     adv=""
     
-    return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
+    #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
+    return [cats[cat],adv,lieu,heure,date] #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date
     
 
 
@@ -96,8 +105,10 @@ for x in range(3):
     result=scrapage()
     while result=="datetoup":
         result=scrapage()
+        makepage(result)
     cat+=1
 
-print(result)
+    print(result)
+
 
 
