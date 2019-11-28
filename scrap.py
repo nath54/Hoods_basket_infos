@@ -6,7 +6,7 @@ import io
 from bs4 import BeautifulSoup
 from datetime import date
 from datetime import datetime
-import makehtml
+from makehtml import *
 
 today = date.today()
 d1 = today.strftime("%d/%m/%Y")
@@ -59,6 +59,7 @@ def scrapage():
         pcoh=txt.find(">",jjj,ihoud)
         pcfh=txt.find("<",pcoh,ihoud)
         lieu="A l'exterieur"
+        adv="Exterieur"
     elif nbtd==4:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
@@ -70,11 +71,11 @@ def scrapage():
         g=txt.find("<td",ihoud)
         gg=txt.find("</td",g+1)
         ggg=txt.find(">",g+1,gg-1)
-        print(g,ggg,gg)
-        print(txt[ggg:gg])
-        adv=txt[ggg:gg]
+        h=txt.find("<a",ggg)
+        hh=txt.find(">",h)
+        hhh=txt.rfind("<",hh,gg)
+        adv=txt[hh+1:hhh]
         lieu="Chez nous"
-        exit()
     else:
         return "error"
 
@@ -84,17 +85,19 @@ def scrapage():
     #print("date : "+date)
     #print("heure : "+heure)
     
+    dd=d1.split("/")
+    bd=date.split("/")
     
-    ts = datetime.strptime(d1, '%d/%m/%y')
-    bs = datetime.strptime(date, '%d/%m/%y')
-    print(ts)
-    print(bs)
-    """if ts>bs:
+    if int(dd[2])>int(bd[2]):
         ps[cat]+=1
         return "datetoup"
-    """
+    elif int(dd[1])>int(bd[1]):
+        ps[cat]+=1
+        return "datetoup"
+    elif int(dd[0])>int(bd[0]):
+        ps[cat]+=1
+        return "datetoup"
     
-    adv=""
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
     return [cats[cat],adv,lieu,heure,date] #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date
@@ -105,7 +108,7 @@ for x in range(3):
     result=scrapage()
     while result=="datetoup":
         result=scrapage()
-        makepage(result)
+        make_page(result)
     cat+=1
 
     print(result)

@@ -12,8 +12,8 @@ def make_page(inf):
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
-        <a href="main_mage.html">Retour</a>
-        <h1>Catégorie """+ii[0]+"""</h1>
+        <a href="main_page.html">Retour</a>
+        <h1>Categorie """+ii[0]+"""</h1>
         <div>
             <table>
                 <tr>
@@ -28,13 +28,13 @@ def make_page(inf):
                         <h2>Prochain match : </h2>
                     </td>
                     <td>
-                        <h3>Contre """+ii[1]+""" </h3>
+                        <h3>"""+ii[1]+""" </h3>
                     </td>
                     <td>
                         <h3>"""+ii[2]+"""</h3>
                     </td>
                     <td>
-                        <h3>À """+ii[3]+"""</h3>
+                        <h3>A """+ii[3]+"""</h3>
                     </td>
                     <td>
                         <h3>Le """+ii[4]+"""</h3>
