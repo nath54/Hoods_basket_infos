@@ -1,0 +1,17 @@
+
+body{
+    background-color:rgb(40,120,40);
+    font-size:30px;
+    text-align:center;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+div{
+    border:2px solid black;
+    background-color:rgb(60,140,60);
+    font-size:30px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
