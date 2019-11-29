@@ -1,9 +1,10 @@
 # import libraries
-import requests
+#import requests
 import urllib.request
 import time
 import io
-from bs4 import BeautifulSoup
+import os
+#from bs4 import BeautifulSoup
 from datetime import date
 from datetime import datetime
 from makehtml import *
@@ -11,18 +12,40 @@ from makehtml import *
 today = date.today()
 d1 = today.strftime("%d/%m/%Y")
 print("d1 =", d1)
+nfs="save.nath"
 
+cac="\n"
+cacc="|"
+ccac="@"
+
+txs="1"+cac
+txs+="1"+cac
+txs+="1"
+
+if not nfs in os.listdir("./") or True:
+    f=open(nfs,'w')
+    f.write( txs )
+    f.close()
+
+f=open(nfs,'r')
+dataload=f.read().split(cac)
+f.close()
 
 # 0=u17 1=u13 2=u9
 cats=["u17","u13","u9"]
+joueurs=[ {"Nathan T":0,"Leon":0,"Adam":0,"Pierre":0,"Louison":9,"Maxime":0,"Nathan C":0,"Paul":0,"Yassine":0,"Louis":0,"Pascal":0},
+                  [{"Paul":0}],
+                  [{"Leo":0}]
+]
 rs=[200000002774034,200000002775683,200000002775749]
 ds=[200000002848356,200000002851801,200000002851984]
-ps=[1,1,1]
+ps=[int(data.split(cacc)[0]) for data in dataload]
+print(ps)
 
 cat=0
 
 def scrapage():
-    
+    """
     url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cat])[2:])+str(hex(ds[cat])[2:])+str(hex(ps[cat])[2:])+".html"
     #print(url)
     response = requests.get(url)
@@ -33,6 +56,7 @@ def scrapage():
     f=io.open("page.html","w",encoding="utf-8")
     f.write(txt)
     f.close()
+    """
     
     f=io.open("page.html","r",encoding="utf-8")
     txt=f.read().lower()
@@ -110,7 +134,6 @@ for x in range(3):
         result=scrapage()
         make_page(result)
     cat+=1
-
     print(result)
 
 
