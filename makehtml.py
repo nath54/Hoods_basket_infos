@@ -27,23 +27,17 @@ def make_page(inf):
                                 <li><strong>Adv: </strong>"""+ii[1]+"""</li>
                             </ul>
                             <h2>Les joueurs :</h2>
-                            <table class='joueurs'>
-                                <tr>
-                                    <th> Nom : </th>
-                                    <th> Presence : </th>
-                                </tr>
                         </div>
                     </div>
                 </div>
+                <ul>
         """
     for j in ii[5].keys():
         txt+="""
-                <tr class="joueur">
-                    <td class="joueur">"""+j+"""</td>
-                    <a><td class="joueur">"""+["Ne viens pas","Viens"][ii[5][j]]+"""</td></a>
-                </tr>"""
+                <li> """+j+""" : <input type="checkbox" name="present"><label for="present">Present</label></input> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li>"""
     txt+="""
-            </table>
+                </ul>
+            </section>
         </div>
     </body>
 </html>
