@@ -8,46 +8,34 @@ def make_page(inf):
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Basket Info """+ii[0]+"""</title>
+        <title>Houds Info """+ii[0]+"""</title>
+        <link rel="stylesheet" href="https://olki.loria.fr/platform/style.7524b05e.css">
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
-        <a href="main_page.html">Retour</a>
-        <h1>Categorie """+ii[0]+"""</h1>
-        <div>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Adversaire</th>
-                    <th>Lieu</th>
-                    <th>Heure</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <td>
-                        <h2>Prochain match : </h2>
-                    </td>
-                    <td>
-                        <h3>"""+ii[1]+""" </h3>
-                    </td>
-                    <td>
-                        <h3>"""+ii[2]+"""</h3>
-                    </td>
-                    <td>
-                        <h3>A """+ii[3]+"""</h3>
-                    </td>
-                    <td>
-                        <h3>Le """+ii[4]+"""</h3>
-                    </td>
-                </tr>
-            </table>
-            <h2>Les joueurs :</h2>
-            <table class='joueurs'>
-                <tr>
-                    <th> Nom : </th>
-                    <th> Presence : </th>
-                </tr>
-            """
+        <div class="body-wrap boxed-container">
+            <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+                        <div class="hero-copy">
+                            <a href="main_page.html">Retour</a>
+                            <h1>Prochain match """+ii[0]+"""</h1>
+                            <ul>
+                                <li>"""+ii[4]+""" ("""+ii[3]+""")</li>
+                                <li><strong>Lieu: </strong>"""+ii[2]+"""</li>
+                                <li><strong>Adv: </strong>"""+ii[1]+"""</li>
+                            </ul>
+                            <h2>Les joueurs :</h2>
+                            <table class='joueurs'>
+                                <tr>
+                                    <th> Nom : </th>
+                                    <th> Presence : </th>
+                                </tr>
+                        </div>
+                    </div>
+                </div>
+        """
     for j in ii[5].keys():
         txt+="""
                 <tr class="joueur">
