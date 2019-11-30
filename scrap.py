@@ -49,7 +49,7 @@ cat=0
 def scrapage():
     retel=True
     if "page"+str(cat)+".html" in os.listdir():
-        retel=False
+        retel=True
     
     if retel:
         url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cat])[2:])+str(hex(ds[cat])[2:])+str(hex(ps[cat])[2:])+".html"
@@ -74,7 +74,6 @@ def scrapage():
         if itd!=-1:
             nbtd+=1
         et=itd+1
-
     if nbtd==5:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
@@ -84,15 +83,15 @@ def scrapage():
         pcfd=txt.find("<",pcod,jjj)
         pcoh=txt.find(">",jjj,ihoud)
         pcfh=txt.find("<",pcoh,ihoud)
-        gg=txt.rfind("<td",0,ihoud)
-        print(txt[gg-100:gg+100])
-        exit()
+        gg=txt.rfind("</td",0,ihoud)
+        ggg=txt.rfind("</a",0,gg)
+        h=txt.rfind(">",0,ggg)
+        adv=txt[h+1:ggg]
         lieu="A l'exterieur"
-        adv="Exterieur"
     elif nbtd==4:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
-        jjj=txt.rfind("<td",0,jj)
+        jjj=txt.rfind("<td",0,jj)    
         pcod=txt.find(">",jjj,jj)
         pcfd=txt.find("<",pcod,jj)
         pcoh=txt.find(">",jj,ihoud)
