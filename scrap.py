@@ -1,10 +1,10 @@
 # import libraries
-#import requests
+import requests
 import urllib.request
 import time
 import io
 import os
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 from datetime import date
 from datetime import datetime
 from makehtml import *
@@ -33,10 +33,12 @@ f.close()
 
 # 0=u17 1=u13 2=u9
 cats=["u17","u13","u9"]
-joueurs=[ {"Nathan T":0,"Leon":0,"Adam":0,"Pierre":0,"Louison":9,"Maxime":0,"Nathan C":0,"Paul":0,"Yassine":0,"Louis":0,"Pascal":0},
-                  [{"Paul":0}],
-                  [{"Leo":0}]
+
+joueurs=[ {"Nathan CERISARA":0,"Maxime PAULY":0,"Paul MITSLER":0,"Leon PERRY":0,"Yassine ROUANE":0,"Louison PDEVIN":0,"Nathan TOMASSONI":0,"Adam TROTZIER":0,"Louis COLNAT":0,"Pascal ETOUMBI":0},
+          {"Pierre UNTEREINER":0,"Adil CHERGUI":0,"Loham GAILLAT":0,"Gabin GROBSHEISER":0,"Antoine ALFONSI":0,"Liam CAILLET":0,"Paul CERISARA":0},
+          {"Leo":0}
 ]
+
 rs=[200000002774034,200000002775683,200000002775749]
 ds=[200000002848356,200000002851801,200000002851984]
 ps=[int(data.split(cacc)[0]) for data in dataload]
@@ -45,20 +47,20 @@ print(ps)
 cat=0
 
 def scrapage():
-    """
-    url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cat])[2:])+str(hex(ds[cat])[2:])+str(hex(ps[cat])[2:])+".html"
-    #print(url)
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    txt=soup.decode()
+    retel=True
+    if "page"+str(cat)+".html" in os.listdir():
+        retel=False
     
-    f=io.open("page.html","w",encoding="utf-8")
-    f.write(txt)
-    f.close()
-    """
+    if retel:
+        url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cat])[2:])+str(hex(ds[cat])[2:])+str(hex(ps[cat])[2:])+".html"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, "html.parser")
+        txt=soup.decode()
+        f=io.open("page"+str(cat)+".html","w",encoding="utf-8")
+        f.write(txt)
+        f.close()
     
-    f=io.open("page.html","r",encoding="utf-8")
+    f=io.open("page"+str(cat)+".html","r",encoding="utf-8")
     txt=f.read().lower()
     f.close()
     
@@ -72,7 +74,7 @@ def scrapage():
         if itd!=-1:
             nbtd+=1
         et=itd+1
-    #print(nbtd)
+
     if nbtd==5:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
@@ -82,6 +84,9 @@ def scrapage():
         pcfd=txt.find("<",pcod,jjj)
         pcoh=txt.find(">",jjj,ihoud)
         pcfh=txt.find("<",pcoh,ihoud)
+        gg=txt.rfind("<td",0,ihoud)
+        print(txt[gg-100:gg+100])
+        exit()
         lieu="A l'exterieur"
         adv="Exterieur"
     elif nbtd==4:
@@ -124,7 +129,8 @@ def scrapage():
     
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
-    return [cats[cat],adv,lieu,heure,date] #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date
+    result=[cats[cat],adv,lieu,heure,date,joueurs[cat]]
+    return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe
     
 
 
@@ -132,7 +138,7 @@ for x in range(3):
     result=scrapage()
     while result=="datetoup":
         result=scrapage()
-        make_page(result)
+    make_page(result)
     cat+=1
     print(result)
 
