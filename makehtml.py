@@ -34,7 +34,7 @@ def make_page(inf):
         """
     for j in ii[5].keys():
         txt+="""
-                <li> """+j+""" : <input type="checkbox" name="present"><label for="present">Present</label></input> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li>"""
+                <div style='color:black; border-radius:25px; padding-left:auto; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <input type="checkbox" name="present"><label for="present">Present</label></input> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>"""
     txt+="""
                 </ul>
             </section>
