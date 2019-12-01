@@ -7,6 +7,9 @@
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
+        <p id="u1x" value='u13'></p>
+        <p id="journee" value='5'></p>
+        
         <div class="body-wrap boxed-container" style="background-color:rgb(200,250,200);">
             <main>
             <section class="hero">
@@ -27,15 +30,17 @@
                 </div>
                 <ul style='text-align: left; list-style-type: none;'>
         
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Antoine ALFONSI : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Liam CAILLET : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Paul CERISARA : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Adil CHERGUI : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Loham GAILLAT : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Gabin GROBSHEISER : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Pierre UNTEREINER : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Antoine ALFONSI' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Antoine ALFONSI : <span style='display: inline-block;'><input type="checkbox" id='Antoine ALFONSIpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Antoine ALFONSIab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Liam CAILLET' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Liam CAILLET : <span style='display: inline-block;'><input type="checkbox" id='Liam CAILLETpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Liam CAILLETab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Paul CERISARA' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Paul CERISARA : <span style='display: inline-block;'><input type="checkbox" id='Paul CERISARApr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Paul CERISARAab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Adil CHERGUI' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Adil CHERGUI : <span style='display: inline-block;'><input type="checkbox" id='Adil CHERGUIpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Adil CHERGUIab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Loham GAILLAT' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Loham GAILLAT : <span style='display: inline-block;'><input type="checkbox" id='Loham GAILLATpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Loham GAILLATab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Gabin GROBSHEISER' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Gabin GROBSHEISER : <span style='display: inline-block;'><input type="checkbox" id='Gabin GROBSHEISERpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Gabin GROBSHEISERab' name="absent"><label for="absent">Absent</label></input> </li></div>
+                <div class="joueur" id='Pierre UNTEREINER' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> Pierre UNTEREINER : <span style='display: inline-block;'><input type="checkbox" id='Pierre UNTEREINERpr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='Pierre UNTEREINERab' name="absent"><label for="absent">Absent</label></input> </li></div>
                 </ul>
             </section>
         </div>
+        <script src="https://olki.loria.fr/n54hoods.js" type="text/javascript"></script>
+        <script src="page.js" type="text/javascript"></script>
     </body>
 </html>

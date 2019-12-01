@@ -43,9 +43,7 @@ def metajour(u1X,journee,qui,etat):
         else: f.write("else {return '??';}\n")
         f.write("}\n")
  
-def fonction():
-    # faire un pull du git repo pour avoir la derniere version
-    
+def updateOnUserInput():
     # récupérer la dernière ligne du fichier de log
     with open("/home/xtof/fromPython4nlp/message.txt","r") as f:
         # format du string: from pthon4nlpsite: 1575197365 89.87.123.92 olki.loria.fr/python4nlp.php?nom=homme%20inconnu&email=unkn%40where.iam&msg=

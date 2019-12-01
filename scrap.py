@@ -150,7 +150,7 @@ def scrapage():
     
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
-    result=[cats[cat],adv,lieu,heure,date,joueurs[cat]]
+    result=[cats[cat],adv,lieu,heure,date,joueurs[cat],ps[cat]]
     return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe
     
 
