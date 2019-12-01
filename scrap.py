@@ -34,9 +34,31 @@ f.close()
 # 0=u17 1=u13 2=u9
 cats=["u17","u13","u9"]
 
-joueurs=[ {"Nathan CERISARA":0,"Maxime PAULY":0,"Paul MITSLER":0,"Leon PERRY":0,"Yassine ROUANE":0,"Louison PDEVIN":0,"Nathan TOMASSONI":0,"Adam TROTZIER":0,"Louis COLNAT":0,"Pascal ETOUMBI":0},
-          {"Pierre UNTEREINER":0,"Adil CHERGUI":0,"Loham GAILLAT":0,"Gabin GROBSHEISER":0,"Antoine ALFONSI":0,"Liam CAILLET":0,"Paul CERISARA":0},
-          {"Leo":0}
+joueurs=[ {
+    "Nathan CERISARA":0,
+    "Louis COLNAT":0,
+    "Pascal ETOUMBI":0,
+    "Paul MITSLER":0,
+    "Maxime PAULY":0,
+    "Louison PDEVIN":0,
+    "Leon PERRY":0,
+    "Yassine ROUANE":0,
+    "Nathan TOMASSONI":0,
+    "Adam TROTZIER":0,
+    },
+
+          {
+              "Antoine ALFONSI":0,
+              "Liam CAILLET":0,
+              "Paul CERISARA":0,
+              "Adil CHERGUI":0,
+              "Loham GAILLAT":0,
+              "Gabin GROBSHEISER":0,
+              "Pierre UNTEREINER":0,
+              },
+          {
+              "Leo":0,
+              }
 ]
 
 rs=[200000002774034,200000002775683,200000002775749]
