@@ -3,7 +3,7 @@ import io
 
 
 def make_page(inf):
-    ii=inf #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=joueurs
+    ii=inf #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=joueurs 6=la journée
     txt="""
 <html>
     <head>
@@ -13,6 +13,9 @@ def make_page(inf):
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
+        <p id="u1x" value='"""+inf[0]+"""'></p>
+        <p id="journee" value='"""+inf[6]+"""'></p>
+        
         <div class="body-wrap boxed-container" style="background-color:rgb(200,250,200);">
             <main>
             <section class="hero">
@@ -35,11 +38,13 @@ def make_page(inf):
         """
     for j in ii[5].keys():
         txt+="""
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""pr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='"""+j+"""ab' name="absent"><label for="absent">Absent</label></input> </li></div>"""
+                <div class="joueur" id='"""+j+"""' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""pr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='"""+j+"""ab' name="absent"><label for="absent">Absent</label></input> </li></div>"""
     txt+="""
                 </ul>
             </section>
         </div>
+        <script src="https://olki.loria.fr/n54hoods.js" type="text/javascript"></script>
+        <script src="page.js" type="text/javascript"></script>
     </body>
 </html>
 """
