@@ -35,7 +35,7 @@ def make_page(inf):
         """
     for j in ii[5].keys():
         txt+="""
-                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>"""
+                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""pr' name="present"><label for="present">Present</label></input></span> <input type="checkbox" id='"""+j+"""ab' name="absent"><label for="absent">Absent</label></input> </li></div>"""
     txt+="""
                 </ul>
             </section>
@@ -43,6 +43,9 @@ def make_page(inf):
     </body>
 </html>
 """
+    # TODO: lancer un JS dans la page qui appele la fct "getUserState(u1X,journee,qui)" qui retourne "pr" ou "ab" ou "??" et qui met a jour les checkbox
+    # d'abord charger avec script src=... cette fonction dans https://olki.loria.fr/n54hoods.js
+
     f=open(ii[0]+".html","w")
     f.write(txt)
     f.close()
