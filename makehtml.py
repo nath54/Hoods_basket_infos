@@ -2,8 +2,9 @@
 import io
 
 
-def make_page(inf):
-    ii=inf #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=joueurs 6=la journée
+def make_page(ii):
+    #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=joueurs 6=la journée
+    print('TOO',ii)
     txt="""
 <html>
     <head>
@@ -13,8 +14,13 @@ def make_page(inf):
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
+<<<<<<< HEAD
         <p id="u1x" value='"""+inf[0]+"""'></p>
         <p id="journee" value='"""+str(inf[6])+"""'></p>
+=======
+        <p id="u1x" value='"""+ii[0]+"""'></p>
+        <p id="journee" value='"""+str(ii[6])+"""'></p>
+>>>>>>> 1e1941ad9707839e1107f8f8e31f2a2a60ad749a
         
         <div class="body-wrap boxed-container" style="background-color:rgb(200,250,200);">
             <main>
@@ -28,7 +34,7 @@ def make_page(inf):
                             <ul style='text-align: left; margin-top: 20'>
                                 <li>"""+ii[4]+""" ("""+ii[3]+""")</li>
                                 <li><strong>Lieu: </strong>"""+ii[2]+"""</li>
-                                <li><strong>Adv: </strong>"""+ii[1]+"""</li>
+                                <li><strong>Adv: </strong>"""+str(ii[1])+"""</li>
                             </ul>
                             <h2>Les joueurs :</h2>
                         </div>

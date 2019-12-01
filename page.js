@@ -1,6 +1,6 @@
 
-const u1x=document.getElementById("u1x");
-const journee=document.getElementById("journee");
+const u1x=document.getElementById("u1x").value;
+const journee=document.getElementById("journee").value;
 
 
 
