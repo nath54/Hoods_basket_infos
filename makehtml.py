@@ -13,13 +13,13 @@ def make_page(inf):
         <link href="page1.css" rel="stylesheet">
     </head>
     <body>
-        <div class="body-wrap boxed-container">
+        <div class="body-wrap boxed-container" style="background-color:rgb(200,250,200);">
             <main>
             <section class="hero">
                 <div class="container">
                     <div class="hero-inner">
                         <div class="hero-copy">
-                            <a href="main_page.html">Accueil</a>
+                            <a href="index.html">Accueil</a>
                             <h1>Prochain match """+ii[0]+"""</h1>
                             <i>(Extrait quotidien du site FFBB)</i>
                             <ul style='text-align: left; margin-top: 20'>
@@ -35,7 +35,7 @@ def make_page(inf):
         """
     for j in ii[5].keys():
         txt+="""
-                <div style='color:black; border-radius:25px; padding-left:auto; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>"""
+                <div style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" name="present"><label for="present">Present</label></input></span> <input type="checkbox" name="absent"><label for="absent">Absent</label></input> </li></div>"""
     txt+="""
                 </ul>
             </section>

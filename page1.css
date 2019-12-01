@@ -22,8 +22,8 @@ table
 {
     border-collapse: collapse;
     font-size:35px;
-    margin-left:auto;
-    margin-right:auto;
+    padding-left:auto;
+    padding-right:auto;
     background-color:rgb(200,200,200);
 }
 

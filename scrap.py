@@ -57,7 +57,7 @@ joueurs=[ {
               "Pierre UNTEREINER":0,
               },
           {
-              "Leo":0,
+              "":0,
               }
 ]
 
