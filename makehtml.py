@@ -15,8 +15,8 @@ def make_page(ii):
     </head>
     <body>
 <<<<<<< HEAD
-        <p id="u1x" value='"""+inf[0]+"""'></p>
-        <p id="journee" value='"""+str(inf[6])+"""'></p>
+        <p id="u1x" value='"""+ii[0]+"""'></p>
+        <p id="journee" value='"""+str(ii[6])+"""'></p>
 =======
         <p id="u1x" value='"""+ii[0]+"""'></p>
         <p id="journee" value='"""+str(ii[6])+"""'></p>
