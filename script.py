@@ -1,3 +1,4 @@
+#coding:utf-8
 import subprocess
 
 JSDIR = '/var/www/html/website/n54hoods.js'
