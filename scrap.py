@@ -110,6 +110,8 @@ def scrapage():
         h=txt.rfind(">",0,ggg)
         adv=txt[h+1:ggg]
         lieu="A l'exterieur"
+        plan=""
+        
     elif nbtd==4:
         j=txt.rfind("<td",0,ihoud)
         jj=txt.rfind("<td",0,j)
@@ -151,7 +153,7 @@ def scrapage():
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
     result=[cats[cat],adv,lieu,heure,date,joueurs[cat],ps[cat]]
-    return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe
+    return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe 6=le plan
     
 
 

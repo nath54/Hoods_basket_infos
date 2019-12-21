@@ -15,8 +15,8 @@ def make_page(ii):
     </head>
     <body>
 <<<<<<< HEAD
-        <p id="u1x" value='"""+inf[0]+"""'></p>
-        <p id="journee" value='"""+str(inf[6])+"""'></p>
+        <p id="u1x" value='"""+ii[0]+"""'></p>
+        <p id="journee" value='"""+str(ii[6])+"""'></p>
 =======
         <p id="u1x" value='"""+ii[0]+"""'></p>
         <p id="journee" value='"""+str(ii[6])+"""'></p>
@@ -44,7 +44,7 @@ def make_page(ii):
         """
     for j in ii[5].keys():
         txt+="""
-                <div class="joueur" id='"""+j+"""' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""pr' name="present" onChange="onChangeBox('"""+j+"""pr')"><label for="present">Present</label></input></span> <input type="checkbox" id='"""+j+"""ab' name="absent" onChange="onChangeBox('"""+j+"""ab')><label for="absent">Absent</label></input> </li></div>"""
+                <div class="joueur" id='"""+j+"""' style='color:black; border-radius:25px; padding-left:20px; padding-right:auto; background-color:rgb(40,120,60); border:2px solid black;'><li> """+j+""" : <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""pr' name="present" onChange="onChangeBox('"""+j+"""pr')"><label for="present">Present</label></input></span> <span style='display: inline-block;'><input type="checkbox" id='"""+j+"""ab' name="absent" onChange="onChangeBox('"""+j+"""ab')><label for="absent">Absent</label></input></span> </li></div>"""
     txt+="""
                 </ul>
             </section>
