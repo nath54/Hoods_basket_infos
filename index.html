@@ -1,51 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Expanding Column Layout</title>
-  <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Expanding Column Layout</title>
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link href="fonts/lato.css" rel="stylesheet">
+        <link rel="stylesheet" href="normalise.min.css">
+        <link rel="stylesheet" href="./style.css">
+         <script src="jquery.min.js"></script>
+         <script src="https://resultats.ffbb.com/js/resultat.js?JSVersion=1.0" type="text/javascript"></script>
+    </head>
+    <body>
 
-<link href="fonts/lato.css" rel="stylesheet">
-<link rel="stylesheet" href="normalise.min.css">
-<link rel="stylesheet" href="./style.css">
- <script src="jquery.min.js"></script>
-
-</head>
-<body>
-
-  <!-- 
-  -->
-      <script src="./script.js"></script>
+        <!-- 
+        -->
+        <script src="./script.js"></script>
   
-<!-- partial:index.partial.html -->
-<section class="strips">
-  <article class="strips__strip" id="art1">
-    <div class="strip__content" onclick='deto("art1");'>
-      <h1 class="strip__title" data-name="Lorem">U9</h1>
-      <div class="strip__inner-text" id="art1a">
+        <!-- partial:index.partial.html -->
+        <section class="strips">
+            <article class="strips__strip" id="art1">
+                <div class="strip__content" onclick='deto("art1");'>
+                    <h1 class="strip__title" data-name="Lorem">U9</h1>
+                        <div class="strip__inner-text" id="art1a">
+                        <p id="u1x" value='u9'></p>
+                        <p id="journee" value='4'></p>
+                          <a href="index.html">Accueil</a>
+                          <h1>Prochain match u9</h1>
+                          <i>(Extrait quotidien du site FFBB)</i>
+                          <ul style='text-align: left; margin-top: 20'>
+                                <li>25/01/2020 (13:30)</li>
+                                <li><strong>Lieu: </strong>A l'exterieur</li>
+                                <li><strong>Plan: </strong><a href='https://resultats.ffbb.com/here/here_popup.php?id=1381001001879'>Lien</a></li>
+                                <li><strong>Adv: </strong>omni sports frouard pompey - 1</li>
+                          </ul>
+        </div>
+
         
       
-    </div>
-  </article>
-  <article class="strips__strip" id="art2">
-    <div class="strip__content" onclick='deto("art2");'>
-      <h1 class="strip__title" data-name="Ipsum">U13</h1>
-      <div class="strip__inner-text">
-        
-      </div>
-    </div>
-  </article>
-  <article class="strips__strip" id="art3">
-    <div class="strip__content" onclick='deto("art3");'>
-      <h1 class="strip__title" data-name="Dolor">U17</h1>
-      <div class="strip__inner-text">
-        
-      </div>
-    </div>
-  </article>
-  <i class="fa fa-close strip__close"></i>
-</section>
-<!-- partial -->
+                        </div>
+                </div>
+            </article>
+            <article class="strips__strip" id="art2">
+                <div class="strip__content" onclick='deto("art2");'>
+                    <h1 class="strip__title" data-name="Ipsum">U13</h1>
+                    <div class="strip__inner-text">
+                        <p id="u1x" value='u13'></p>
+                        <p id="journee" value='7'></p>
+                          <a href="index.html">Accueil</a>
+                          <h1>Prochain match u13</h1>
+                          <i>(Extrait quotidien du site FFBB)</i>
+                          <ul style='text-align: left; margin-top: 20'>
+                                <li>11/01/2020 (15:30)</li>
+                                <li><strong>Lieu: </strong>Chez nous</li>
+                                <li><strong>Plan: </strong><a href='https://resultats.ffbb.com/here/here_popup.php?id=4000000040'>Lien</a></li>
+                                <li><strong>Adv: </strong>ac blainville damelevieres</li>
+                          </ul>
+        </div>
 
-</body>
+        
+                    </div>
+                </div>
+            </article>
+            <article class="strips__strip" id="art3">
+                <div class="strip__content" onclick='deto("art3");'>
+                    <h1 class="strip__title" data-name="Dolor">U17</h1>
+                    <div class="strip__inner-text">
+                        <p id="u1x" value='u17'></p>
+                        <p id="journee" value='10'></p>
+                          <a href="index.html">Accueil</a>
+                          <h1>Prochain match u17</h1>
+                          <i>(Extrait quotidien du site FFBB)</i>
+                          <ul style='text-align: left; margin-top: 20'>
+                                <li>11/01/2020 (18:00)</li>
+                                <li><strong>Lieu: </strong>Chez nous</li>
+                                <li><strong>Plan: </strong><a href='https://resultats.ffbb.com/here/here_popup.php?id=4000000040'>Lien</a></li>
+                                <li><strong>Adv: </strong>ac blainville damelevieres - 1</li>
+                          </ul>
+        </div>
+
+
+                    </div>
+                </div>
+            </article>
+            <i class="fa fa-close strip__close"></i>
+        </section>
+        <!-- partial -->
+    </body>
 </html>

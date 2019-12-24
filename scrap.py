@@ -66,6 +66,7 @@ joueurs=[ {
 rs=[200000002774034,200000002775683,200000002775749]
 ds=[200000002848356,200000002851801,200000002851984]
 ps=[int(data.strip().split(cacc)[0]) for data in dataload if data!=""]
+pg=["","",""]
 print(ps)
 
 cat=0
@@ -178,9 +179,11 @@ for x in range(3):
     while result[1]=="datetoup" and sec<50:
         result=scrapage()
         sec+=1
-    make_page(result)
+    pg[x]=make_page(result)
     cat+=1
     print(result)
+
+make_final_page(pg[2],pg[1],pg[0])
 
 txs=""
 for p in ps:
