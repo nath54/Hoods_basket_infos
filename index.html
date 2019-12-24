@@ -1,25 +1,51 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Info Hoods Basket</title>
-        <link href="page2.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Houdemont Basketball</h1>
-        <h2>Catégories</h2>
-        <div>
-            <a href="u17.html"><div class="cat"><div>
-                <h3>U17</h3>
-            </div>
-            </a>
-            <a href="u13.html"><div class="cat"><div>
-                <h3>U13</h3>
-            </div>
-            </a>
-            <a href="u9.html"><div class="cat"><div>
-                <h3>U9</h3>
-            </div>
-            </a>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Expanding Column Layout</title>
+  <link rel="stylesheet" href="fonts/font-awesome.min.css">
+
+<link href="fonts/lato.css" rel="stylesheet">
+<link rel="stylesheet" href="normalise.min.css">
+<link rel="stylesheet" href="./style.css">
+ <script src="jquery.min.js"></script>
+
+</head>
+<body>
+
+  <!-- 
+  -->
+      <script src="./script.js"></script>
+  
+<!-- partial:index.partial.html -->
+<section class="strips">
+  <article class="strips__strip" id="art1">
+    <div class="strip__content" onclick='deto("art1");'>
+      <h1 class="strip__title" data-name="Lorem">U9</h1>
+      <div class="strip__inner-text" id="art1a">
+        
+      
+    </div>
+  </article>
+  <article class="strips__strip" id="art2">
+    <div class="strip__content" onclick='deto("art2");'>
+      <h1 class="strip__title" data-name="Ipsum">U13</h1>
+      <div class="strip__inner-text">
+        
+      </div>
+    </div>
+  </article>
+  <article class="strips__strip" id="art3">
+    <div class="strip__content" onclick='deto("art3");'>
+      <h1 class="strip__title" data-name="Dolor">U17</h1>
+      <div class="strip__inner-text">
+        
+      </div>
+    </div>
+  </article>
+  <i class="fa fa-close strip__close"></i>
+</section>
+<!-- partial -->
+
+</body>
 </html>
