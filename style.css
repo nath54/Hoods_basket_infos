@@ -73,7 +73,7 @@
 }
 @media screen and (max-width: 760px) {
   .strips__strip {
-    min-height: 20vh;
+    min-height: 33vh;
   }
   .strips__strip:nth-child(1) {
     top: 0;
