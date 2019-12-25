@@ -1,3 +1,11 @@
+
+@keyframes an_color{
+    0% { color:rgb(255,255,255); }
+    50% { color:rgb(0,255,0); }
+    100% { color:rgb(255,255,255); }
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -27,7 +35,7 @@
   left: 66vw;
 }
 .strips__strip:nth-child(1) .strip__content {
-  background: #244F75;
+  background: rgb(0,50,60);
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
   -webkit-animation-name: strip1;
@@ -36,7 +44,7 @@
           animation-delay: 0.1s;
 }
 .strips__strip:nth-child(2) .strip__content {
-  background: #60BFBF;
+  background: rgb(60,100,60);
   -webkit-transform: translate3d(0, 100%, 0);
           transform: translate3d(0, 100%, 0);
   -webkit-animation-name: strip2;
@@ -45,7 +53,7 @@
           animation-delay: 0.2s;
 }
 .strips__strip:nth-child(3) .strip__content {
-  background: #8C4B7E;
+  background: rgb(10,100,10);
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
   -webkit-animation-name: strip3;
@@ -71,7 +79,7 @@
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-aspect-ratio: 4/3) {
   .strips__strip {
     min-height: 33vh;
   }
@@ -173,9 +181,10 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  font-size: 3.5vw;
+  font-size: 5vw;
   color: white;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: an_color 5s linear infinite;
 }
 @media screen and (max-width: 760px) {
   .strip__title {
@@ -245,7 +254,7 @@
   }
   100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);ackf
   }
 }
 @keyframes strip3 {
