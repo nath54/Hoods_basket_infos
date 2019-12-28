@@ -161,7 +161,7 @@ def scrapage():
     
     jour_sur_ordi=int(dd[2]+dd[1]+dd[0])
     jour_sur_site=int(bd[2]+bd[1]+bd[0])
-    
+    print("debugdate",jour_sur_ordi,jour_sur_site,cat,ps[cat]) 
     if jour_sur_ordi>jour_sur_site:
         ps[cat]+=1
         return [cats[cat],"datetoup"]

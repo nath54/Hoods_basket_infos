@@ -8,5 +8,5 @@ python scrap.py
 git commit -am "ok"
 git push
 
-exit()
+exit
 
