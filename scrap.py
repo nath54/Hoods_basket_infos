@@ -165,7 +165,8 @@ def scrapage():
     if jour_sur_ordi>jour_sur_site:
         ps[cat]+=1
         return [cats[cat],"datetoup"]
-    
+    """if jour_sur_ordi+7<jour_sur_site:
+        return [cats[cat],"bugdate"]"""
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
     result=[cats[cat],adv,lieu,heure,date,joueurs[cat],ps[cat],plan]
