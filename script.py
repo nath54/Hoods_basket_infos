@@ -4,6 +4,8 @@ import subprocess
 JSDIR = '/var/www/html/website/n54hoods.js'
 LOCDIR = '/home/xtof/n54.dat'
 
+def 
+
 def metajour(u1X,journee,qui,etat):
     with open(LOCDIR,"r") as f: lines=f.readlines
     # on a 1 ligne dans le fichier par (u1X,journee) qui contient "nomjoueur"+etat separes par un TAB
@@ -29,7 +31,7 @@ def metajour(u1X,journee,qui,etat):
         s = l.split('\t')
         for i range(2,len(s)):
             etats[(s[0],s[1],s[i][:-1])]=s[i][-1]
-
+    
     # cree la fct JS qui est telechargee et retourne l'etat des boutons
     with open(JSDIR,"w") as f:
         f.write("function getUserState(u1X,journee,qui) {\n")
