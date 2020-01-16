@@ -83,6 +83,10 @@ cat=0
 
 ########################################### - FONCTIONS - ###########################################
 
+def get_scrap_name(cat,day):
+	return "https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cats.index(cat)])[2:])+str(hex(ds[cats.index(cat)])[2:])+str(hex(day)[2:])+".html"
+    
+
 def get_name_page(cat,day): return "page-"+str(cat)+"-"+str(day)+".html"
 
 def verif_days():
@@ -92,7 +96,7 @@ def verif_days():
 
 def get_info_pages(cat,day):
     #ON OUVRE LA PAGE
-    infos={"titre":None,"etat":"none","categorie":cat,"day":day,"adversaire":"adversaire inconnu","lieu":"lieu inconnu","date":"date inconnue","heure":"heure inconnue","plan":"plan inconnu"}
+    infos={"titre":None,"etat":"none","categorie":cat,"day":day,"adversaire":"adversaire inconnu","lieu":"lieu inconnu","date":"date inconnue","heure":"heure inconnue","plan":"plan inconnu","site":"pas de lien"}
     
     name=get_name_page(cat,day)
     if name in os.listdir(dir_pages):
@@ -145,7 +149,7 @@ def get_info_pages(cat,day):
             ggg=txt.rfind("</a",0,gg)
             h=txt.rfind(">",0,ggg)
             adv=txt[h+1:ggg]
-            lieu="A l'exterieur"
+            lieu="Chez l'adversaire"
             plan=""
         elif nbtd==4:
             j=txt.rfind("<td",0,ihoud)
@@ -198,7 +202,7 @@ def get_info_pages(cat,day):
     return infos
     
 def scrap_page(cat,day):
-    url="https://resultats.ffbb.com/championnat/rencontres/"+str(hex(rs[cats.index(cat)])[2:])+str(hex(ds[cats.index(cat)])[2:])+str(hex(day)[2:])+".html"
+    url=get_scrap_page(cat,day)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     txt=soup.decode()
@@ -226,6 +230,7 @@ def an_page(cat):
     plan=infos_page["plan"]
     jrs=joueurs[cats.index(cat)]
     day=ps[cats.index(cat)]
+    lien=get_scrap_name(cat,day)
     
     etat=infos_page["etat"]
     if etat=="error": return [categorie,"error"]
@@ -236,8 +241,8 @@ def an_page(cat):
     
     #return "Pour la catégorie "+cats[cat]+", le prochain match est a "+heure+" le "+date+" contre "+adv
     #result=[cats[cat],adv,lieu,heure,date,joueurs[cat],ps[cat],plan]
-    result=[categorie,adversaire,lieu,heure,date,jrs,day,plan]
-    return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe 6=le plan
+    result=[categorie,adversaire,lieu,heure,date,jrs,day,plan,lien]
+    return result #0=nom categorie 1=l'adversaire 2=le lieu 3=l'heure 4=la date #5=les joueurs de l'équipe 6=le plan #7=le site off
 
 def scrap_all_pages_of_cat(cat):
     sec=0
@@ -296,22 +301,24 @@ def verif_match(cat):
         scrap_all_pages_of_cat(cat)
         get_all_dates_cat(cat)
 
+def makepage():
+    pg=[]
+    for cat in cats:
+	    pg.append( make_page( an_page(cat) ) )
+    make_final_page(pg[2],pg[1],pg[0])
+
+def main():
+    #TODO : a debloquer une fois que j'aurais tout fait sur le server
+    #scrap_all()
+    for cat in cats:
+        get_all_dates_cat(cat)
+        #verif_match(cat)
+    makepage()
+        
 ########################################### - MAIN CODE - ###########################################
 
-#TODO : a debloquer une fois que j'aurais tout fait sur le server
-"""
-#scrap_all()
+main()
 
-for cat in cats:
-    get_all_dates_cat(cat)
-    verif_match(cat)
-
-pg=[]
-for cat in cats:
-	pg.append( make_page( an_page(cat) ) )
-
-make_final_page(pg[2],pg[1],pg[0])
-"""
 
 """
 txs=""
