@@ -12,11 +12,10 @@ def make_page(ii):
                           <h1>Prochain match """+ii[0]+"""</h1>
                           <i>(Extrait quotidien du site FFBB)</i>
                           <ul style='text-align: left; margin-top: 20'>
-                                <li><strong>date (heure) : </strong>"""+ii[4]+""" ("""+ii[3]+""")</li>
-                                <li><strong>Lieu: </strong>"""+ii[2]+"""</li>
-                                <li><strong>Plan: </strong><a href='https://resultats.ffbb.com/here/here_popup.php?id="""+ii[7]+"""'>Lien</a></li>
+                                <li><strong>date: </strong>"""+ii[4]+""" ("""+ii[3]+""")</li>
+                                <li><strong>Lieu: </strong>"""+ii[2]+"""(<a href='https://resultats.ffbb.com/here/here_popup.php?id="""+ii[7]+"""'>plan</a>)</li>
                                 <li><strong>Adv: </strong>"""+str(ii[1])+"""</li>
-                                <li><strong>Lien vers le site officiel : </strong><a href='"""+str(ii[8])+"""'> Lien </a></li>
+                                <li><a href='"""+str(ii[8])+"""'> Vers la ffbb </a></li>
                           </ul>
                           
         </div>
