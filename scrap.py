@@ -285,7 +285,7 @@ def get_all_dates_cat(cat):
     print( dts )
     pm=0
     for d in dts:
-        if ad<d[1]:
+        if ad<=d[1]:
             pm=d[0]
             break
     ps[cats.index(cat)]=pm
