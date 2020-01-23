@@ -8,9 +8,9 @@ def make_page(ii):
         txt="""
                         <p id="u1x" value='"""+ii[0]+"""'></p>
                         <p id="journee" value='"""+str(ii[6])+"""'></p>
-                          <a href="index.html">Accueil</a>
+                          """#<a href="index.html">Accueil</a>
+        txt+="""
                           <h1>Prochain match """+ii[0]+"""</h1>
-                          <i>(Extrait quotidien du site FFBB)</i>
                           <ul style='text-align: left; margin-top: 20'>
                                 <li><strong>date: </strong>"""+ii[4]+""" ("""+ii[3]+""")</li>
                                 <li><strong>Lieu: </strong>"""+ii[2]+"""(<a href='https://resultats.ffbb.com/here/here_popup.php?id="""+ii[7]+"""'>plan</a>)</li>
