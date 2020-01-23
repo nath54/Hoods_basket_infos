@@ -48,7 +48,7 @@ def make_final_page(u9,u13,u17):
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Expanding Column Layout</title>
+        <title>Prochains Matchs Hoodemont basket</title>
         <link rel="stylesheet" href="fonts/font-awesome.min.css">
         <link href="fonts/lato.css" rel="stylesheet">
         <link rel="stylesheet" href="normalise.min.css">
