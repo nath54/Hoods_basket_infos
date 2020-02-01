@@ -202,7 +202,7 @@ def get_info_pages(cat,day):
     return infos
     
 def scrap_page(cat,day):
-    url=get_scrap_page(cat,day)
+    url=get_scrap_name(cat,day)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     txt=soup.decode()
@@ -317,6 +317,7 @@ def main():
         
 ########################################### - MAIN CODE - ###########################################
 
+scrap_all()
 main()
 
 
