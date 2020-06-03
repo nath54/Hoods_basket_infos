@@ -2,5 +2,5 @@
 
 architecture:
 
-![](diag.png)
+//![](diag.png)
  
